@@ -2,20 +2,19 @@
 Get you guys a solid foundation in Python, which is useful if you want to build for the web or do any machine learning or data science.
 
 # Instructor
-name - Suneel Chakravorty
-
-email - chakravorty@post.harvard.edu
+name - Henry Xie
+email - henry@pennypackerlabs.com
 
 # What do you need?
 - Terminal for Mac users, Command Prompt for Windows users
-- the python command
+- Python 2.7+ (Run `python --version` in your Terminal or Command Prompt to see what you have installed)
 
 # The Basic Data Types
 What are the basic data types?
 - Integers, e.g. 1, 2, 3
-- Floating point numbers, e.g 2.3, 3.7
+- Floating point numbers, e.g 2.3, 3.782738
 - String, e.g. "John Krasinski"
-- bool, True or False
+- Boolean, True or False
 - None, which just corresponds to empty or null, if you've used other languages
 
 Let's start with integers and floats.
