@@ -4,10 +4,12 @@ Get you guys a solid foundation in Python, which is useful if you want to build 
 # Instructor
 name - Henry Xie
 email - henry@pennypackerlabs.com
+website - [pennypackerlabs.com](http://pennypackerlabs.com)
 
 # What do you need?
 - Terminal for Mac users, Command Prompt for Windows users
 - Python 2.7+ (Run `python --version` in your Terminal or Command Prompt to see what you have installed)
+- Alternatively, you can run Python using an [online interpreter](https://repl.it/languages/python3)
 
 # The Basic Data Types
 What are the basic data types?
@@ -122,6 +124,29 @@ Practice problem:
 - Prove using the == operator that they are equal.
 ```
 
+What if we wanted to prompt the user to set the variables as opposed to having them pre-defined? We can use `input` (Python 3) or `raw_input` (Python 2) like so:
+
+```python
+>>> first_name = input("What is your first name? ")
+>>> last_name = input("What is your last name? ")
+>>> print("Your full name is: {} {}".format(first_name, last_name))
+```
+
+The above is an example of "string interpolation", a technique used for interpolating strings with variables.
+
+
+Application and Numbers Recap: Lemonade Accounting
+
+Prompt the user for how many lemonades he/she sold and over how many hours.
+Use code to print out how much profit the user made, as well as the user's average hourly income.
+
+Assume the following:
+ - It takes 4 lemons to make a lemonade
+ - Each lemon costs 50 cents
+ - Cost of the lemonades is your only expense
+ - When prompted, the user will input valid integer values
+
+
 # Lists
 Lists is a super useful data type.
 It's an ordered collection of items, which you can modify by adding or removing elements.
@@ -166,7 +191,7 @@ Practice problem:
 - Use .pop() to remove "Random String" from the list
 - Print the list
 - Check if 'Chipotle' is in the list
-- Check if 'Random String' is in the list
+- Check if 'Dunkin Donuts' is in the list
 - Get the length of the list
 ```
 
@@ -179,11 +204,11 @@ Let's learn about slicing:
 ```
 
 # Dictionaries
-Dictionaries are also massively useful. You can think of them as maps, between as set of keys and their corresponding values.
+Dictionaries are also massively useful. You can think of them as maps, between a set of keys and their corresponding values.
 Let's look at one in the shell to better understand how they work and how they can be useful:
 
 ```python
->>> # Here's the syntax, {} with key:value, with key being a string.
+>>> # Here's the syntax, `{}` with `key:value`, with `key` being a string.
 >>> person = {"name": "John Jameson", "age": 31, "hobbies": ["tennis", "python", "piano"]}
 >>> person["name"]
 >>> # like a string, we use the brackets but instead of the index, we provide the key name
@@ -211,7 +236,7 @@ Create a dictionary called `class_data` with the following keys:
 - "course_name", which should correspond to "Intro to Python"
 - "student_count", which should correspond to number of students, say 20
 - "instructor", which should itself be a dictionary with the following keys
-    - "name" ("Suneel")
+    - "name" ("Henry")
     - "gender" ("M")
     - "can_program" (True)
 - get the student count from the dictionary
@@ -254,9 +279,9 @@ There are different kinds of loops, for loops and while loops. They're quite sim
 ```python
 >>> numbers = [1, 2, 8, 7, 9, 10]
 >>> odds = []
->>> for cat in numbers:
-        if cat % 2 == 1:
-            odds.append(cat)
+>>> for number in numbers:
+        if number % 2 == 1:
+            odds.append(number)
 
 print odds
 ```
@@ -288,7 +313,7 @@ Let's learn the syntax of functions:
 >>> z = add(3, 4)
 >>> print z
 ```
-a and b are variables that the function `add` takes
+a and b are variables that the function `add` takes, a.k.a. ARGUMENTS
 
 Practice problems:
 ```
@@ -307,7 +332,7 @@ def div_by_33(numbers):
     return by_33
 ```
 
-Practice problem: Write a function that takes a list of numbers and retursn True if the sum of the numbers is even and False otherwise.
+Practice problem: Write a function that takes a list of numbers and returns True if the sum of the numbers is even and False otherwise.
 
 # 'Real-life' problem: Restaurant Recommendation Engine
 - figuring out where to eat lunch everyday is annoying
@@ -316,7 +341,7 @@ Practice problem: Write a function that takes a list of numbers and retursn True
 
 Let's learn about the random library, a pretty useful builtin python library:
 ```python
->>> import random # this is how we make accessible the random library code
+>>> import random  # this is how we make accessible the random library code
 >>> numbers = [1, 3, 5, 6, 7]
 >>> shuffled = random.shuffle(numbers)
 >>> for number in shuffled:
@@ -347,7 +372,8 @@ restaurants = ["Laut", "Random String", "Chipotle", "Eataly", "Sophie's Cuban", 
 def recommend(restaurants):
     random.shuffle(restaurants)
     for choice in restaurants:
-        if choice not in recommendation_history[-1: -4]:
+        if choice not in recommendation_history[-4:]:
+            recommendation_history.append(choice)
             return choice
 ```
 
