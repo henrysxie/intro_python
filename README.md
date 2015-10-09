@@ -143,9 +143,25 @@ Use code to print out how much profit the user made, as well as the user's avera
 Assume the following:
  - It takes 4 lemons to make a lemonade
  - Each lemon costs 50 cents
+ - You charge $5 per lemonade
  - Cost of the lemonades is your only expense
  - When prompted, the user will input valid integer values
 
+```python
+num_lemonades = int(input("How many lemonades did you sell? "))
+num_hours = int(input("Over how many hours? "))
+
+lemons_per_lemonade = 4
+price = 5
+lemon_cost = 0.5
+
+revenues = num_lemonades * price
+expenses = lemon_cost * num_lemonades * lemons_per_lemonade
+
+profit = revenues - expenses
+
+print("You made ${}, or ${} per hour.".format(profit, profit / num_hours))
+```
 
 # Lists
 Lists is a super useful data type.
