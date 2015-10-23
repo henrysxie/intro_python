@@ -1,10 +1,10 @@
 # Objective
-Get you guys a solid foundation in Python, which is useful if you want to build for the web or do any machine learning or data science.
+Build solid foundation in Python, an excellent starting language known for its versatility and concise syntax. After this course, you may delve deeper into particular areas such as web development, machine learning, and data science.
 
 # Instructor
-name - Henry Xie
-email - henry@pennypackerlabs.com
-website - [pennypackerlabs.com](http://pennypackerlabs.com)
+- name: Henry Xie
+- email: henrysxie@gmail.com
+- website: [simplefractal.com](http://simplefractal.com)
 
 # What do you need?
 - Terminal for Mac users, Command Prompt for Windows users
@@ -30,16 +30,10 @@ We can do math in the shell.
 4
 >>> 2 * 3.5
 7.0
->>>
-```
-
-What's the difference between 2.0 and 2?
-```python
->>> 7/2
-3
->>> 7/2.0
+>>> 7 / 2
 3.5
 ```
+
 Practice question - try these out in the shell:
 ```
 1. 2 * 7 * 3.5
@@ -124,7 +118,7 @@ Practice problem:
 - Prove using the == operator that they are equal.
 ```
 
-What if we wanted to prompt the user to set the variables as opposed to having them pre-defined? We can use `input` (Python 3) or `raw_input` (Python 2) like so:
+What if we wanted to prompt the user to set the variables as opposed to having them pre-defined? We can use `input` (Python 3+) or `raw_input` (Python 2.x) like so:
 
 ```python
 >>> first_name = input("What is your first name? ")
@@ -164,7 +158,7 @@ print("You made ${}, or ${} per hour.".format(profit, profit / num_hours))
 ```
 
 # Lists
-Lists is a super useful data type.
+Lists is a super useful data type often used to store a multitude of similar things.
 It's an ordered collection of items, which you can modify by adding or removing elements.
 
 Let's learn the syntax of a list:
@@ -188,14 +182,19 @@ IndexError
 "Hello"
 >>> # can remove elements, defaults to popping off the last one
 >>> x.pop()
+"Hello"
 >>> print x
+[1, 2, 3, 4, 5]
 >>> # can specify the index
 >> x.pop(2)
+3
 >>> print x
+ [1, 2, 4, 5]
 >>> # can do a boolean check if something is in the list
 >>> 5 in x
+True
+>>> 3 in x
 False
->>> 1 in x
 ```
 
 Practice problem:
@@ -215,36 +214,56 @@ Let's learn about slicing:
 ```python
 >>> y = [1, 2, 3, 4, 5, 6, 7, 8]
 >>> y[2:]
+[3, 4, 5, 6, 7, 8]
 >>> y[:4]
+[1, 2, 3, 4]
 >>> y[1:3]
+[2, 3]
+>>> y[-3:]
+[6, 7, 8]
 ```
+- In the square brackets after the list, there is now a colon to indicate slicing.
+- Slicing produces a new list that is a subsection of the original list.
+- What comes before the colon is the first index we wish to include. It defaults to 0.
+- The sliced list includes all element up until but not including the index specified after the colon. If you don't specify it, all elements through the last element of the list will be included in the sliced list.
+- Negative indices are supported. `-3` refers to the third element from the end of the list.
 
 # Dictionaries
-Dictionaries are also massively useful. You can think of them as maps, between a set of keys and their corresponding values.
+Dictionaries are also massively useful. One use case is for storing several attributes or data points about the same thing. You can think of them as maps, between a set of keys and their corresponding values.
 Let's look at one in the shell to better understand how they work and how they can be useful:
 
 ```python
 >>> # Here's the syntax, `{}` with `key:value`, with `key` being a string.
->>> person = {"name": "John Jameson", "age": 31, "hobbies": ["tennis", "python", "piano"]}
->>> person["name"]
->>> # like a string, we use the brackets but instead of the index, we provide the key name
->>> person["age"]
->>> hobbies = person["hobbies"]
->>> len(hobbies)
->>> hobbies[1]
->>> person["random"]
+>>> dog = {"name": "Lucky", "age": 12, "friends": ["Penny", "Pancho"]}
+>>> # like for lists, we use the brackets to reference data inside but instead of the index, we provide the key name as a string
+>>> dog["name"]  
+"Lucky"
+>>> dog["friends"].append("Spot")
+>>> len(dog["friends"])
+3
+>>> dog["random"]
 KeyError
->>> person["location"] = "New York"
->>> person["deepest_darkest_secret"] = "Loves Vampire Diaries"
-print person
->>> del person["deepest_darkest_secret"]
-print person
->>> person.keys()
->>> person.values()
->>> person.items()
+>>> dog["breed"] = "golden retriever"
+>>> dog
+{'friends': ['Penny', 'Pancho', 'Spot'], 'age': 12, 'name': 'Lucky', 'breed': 'Golden Retriever'}
+>>> key = "age"
+>>> dog[key] += 1
+>>> dog
+{'friends': ['Penny', 'Pancho', 'Spot'], 'age': 13, 'name': 'Lucky', 'breed': 'Golden Retriever'}
+>>> del dog[key]
+>>> dog
+{'friends': ['Penny', 'Pancho', 'Spot'], 'name': 'Lucky', 'breed': 'Golden Retriever'}
+>>> dog.keys()
+dict_keys(['friends', 'name', 'breed'])
+>>> dog.values()
+dict_values([['Penny', 'Pancho', 'Spot'], 'Lucky', 'Golden Retriever'])
+>>> dog.items()
+dict_items([('friends', ['Penny', 'Pancho', 'Spot']), ('name', 'Lucky'), ('breed', 'Golden Retriever')])
 >>> # check if a key exists in the dictionary
->>> "name" in person
->>> "secret" in person
+>>> "name" in dog
+True
+>>> "favorite_food" in dog
+False
 ```
 Practice problem:
 ```
@@ -257,6 +276,8 @@ Create a dictionary called `class_data` with the following keys:
     - "can_program" (True)
 - get the student count from the dictionary
 - get the instructor name from the dictionary
+- delete the gender key under instructor
+- change the instructor name to "Henry Xie"
 ```
 
 # If/Else
@@ -265,27 +286,29 @@ Let's learn the syntax, note INDENTATION is important:
 ```python
 >>> x = 5
 >>> if x > 4:
-        print "Hello"
+        print("Hello")
     else:
-        print "World"
+        print("World")
 Hello
 >>> if x < 5:
-        print "Less than five"
+        print("Less than five")
     else:
-        print "Greater than or equal to five"
+        print("Greater than or equal to five")
 >>> if x == 1 or x == 2:
-        print "Ha"
+        print("Ha")
     elif x == 3:
-        print "Hey"
+        print("Hey")
     else:
-        print "Hi"
+        print("Hi")
 ```
 
 Practice problem:
 ```
-Given x = "John Jameson",
-- Construct an if else statement according to this logic: if "John" is in x, print "John is in x", otherwise print "John is not in x"
-- Construct an if/elif/else statement according to this logic: if "roger" is in x, print "Hi Roger!", elif the length of x is greater than 20, print "thats a long string", else print "Oh well!"
+- Prompt the user for an integer between 0 and 100 using `input` or `raw_input`
+- If the number is greater than 75, print "You picked a large number!"
+- Else if the number is greater than 40, print "You picked a decently large number."
+- Else if the number is greater than 10, print "Ok, that's still respectable."
+- Else print "Wow, your number is really small."
 ```
 
 # Loops
@@ -299,10 +322,12 @@ There are different kinds of loops, for loops and while loops. They're quite sim
         if number % 2 == 1:
             odds.append(number)
 
-print odds
+>>> odds
+[1, 7, 9]
 ```
 - the `number` in the for loop syntax is a dummy variable that refers to the element in the list that we're passing through. The first time around, number refers to 1, the last time it refers to 10.
 - we are going through this list and if the number is odd, we add it to the odds list that we initialized before the for loop.
+- this technique/algorithm of initializing a variable (in this case as an empty list), and constructing it as we loop over data, is very common and useful.
 
 Before we move on to some practice problems, here is a useful function:
 ```python
@@ -327,7 +352,8 @@ Let's learn the syntax of functions:
 >>> def add(a, b):
         return a + b
 >>> z = add(3, 4)
->>> print z
+>>> print(z)
+7
 ```
 a and b are variables that the function `add` takes, a.k.a. ARGUMENTS
 
@@ -350,6 +376,17 @@ def div_by_33(numbers):
 
 Practice problem: Write a function that takes a list of numbers and returns True if the sum of the numbers is even and False otherwise.
 
+# Methods
+Methods are functions that are attached to things, or "objects" in programming-speak. These methods are accessed on the object using dot notation. Here is an example:
+
+```python
+>>> greeting = "Hello, World"
+>>> print(greeting.lower())
+hello, world!
+```
+- `greeting` is a variable that contains a string. All strings have the `lower` method, which when called, produces the lowercase value of the string it was called on.
+- methods and functions are conceptually the same
+
 # 'Real-life' problem: Restaurant Recommendation Engine
 - figuring out where to eat lunch everyday is annoying
 - let's automate it
@@ -361,7 +398,12 @@ Let's learn about the random library, a pretty useful builtin python library:
 >>> numbers = [1, 3, 5, 6, 7]
 >>> shuffled = random.shuffle(numbers)
 >>> for number in shuffled:
-        print number.pop()
+        print(number.pop())
+3
+1
+6
+5
+7
 ```
 
 Problem 1:
@@ -385,9 +427,10 @@ import random
 recommendation_history = []
 restaurants = ["Laut", "Random String", "Chipotle", "Eataly", "Sophie's Cuban", "Chop't", "Potbelly's"]
 
-def recommend(restaurants):
+def recommend():
     random.shuffle(restaurants)
     for choice in restaurants:
+        # Slice the list starting from the fourth last element to the end
         if choice not in recommendation_history[-4:]:
             recommendation_history.append(choice)
             return choice
