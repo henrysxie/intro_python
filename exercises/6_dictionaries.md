@@ -12,3 +12,7 @@ Create a dictionary called `class_data` with the following keys:
 - get the student count from the dictionary
 
 - get the instructor name from the dictionary
+
+- delete the gender key under instructor
+
+- change the instructor name to "Henry Xie"

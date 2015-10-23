@@ -6,5 +6,3 @@
 
 4. Create a function that calculates sales tax and 15% tip on given price:
    Price -> {"tax": x, "tip": y}
-
-5. Create a function that prints the 20 first Fibonacci numbers in order
