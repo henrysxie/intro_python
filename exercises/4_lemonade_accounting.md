@@ -6,6 +6,6 @@ Assume the following:
 
 - It takes 4 lemons to make a lemonade
 - Each lemon costs 50 cents
-- Cost of the lemonades is your only expense
+- Cost of the lemons is your only expense
 - Your selling each lemonade for $5
 - When prompted, the user will input valid integer values
