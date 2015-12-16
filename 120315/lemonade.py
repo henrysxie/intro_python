@@ -1,0 +1,1 @@
+print "You sold 30 lemonades"

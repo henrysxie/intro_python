@@ -1,0 +1,12 @@
+
+100 + 4(11) (Google multiplication syntax if you don't know it)
+
+(100 + 4)(11)
+
+(4 + 7(27)) / 9
+
+3(10 - 109) - 2(-482)
+
+18489 modulo 23 (Google modulo syntax if you don't know it)
+
+15 to the power of 5 (Google exponent syntax if you don't know it)
