@@ -1,5 +1,0 @@
-Hi, my name is {{ your name }}!
-
-I don't like junk food
-
-I don't like silly words like "diphtong"
