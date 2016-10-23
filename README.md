@@ -1,9 +1,12 @@
-# Objective
-Build solid foundation in Python, an excellent starting language known for its versatility and concise syntax. After this course, you may delve deeper into particular areas such as web development, machine learning, and data science.
+# Wharton Intro Python Workshop
+## October 22, 2016
+Build a solid foundation in Python, an excellent starting language known for its versatility and concise syntax.
+
+After taking Intermediate Python (November 11, 2016), you may delve deeper into particular areas such as web development, data science, and machine learning.
 
 # Instructor
 - name: Henry Xie
-- email: henrysxie@gmail.com
+- email: henry@simplefractal.com
 - website: [simplefractal.com](http://simplefractal.com)
 
 # What do you need?
@@ -30,7 +33,7 @@ We can do math in the shell.
 4
 >>> 2 * 3.5
 7.0
->>> 7 / 2
+>>> 7 / 2.0
 3.5
 ```
 
@@ -236,7 +239,7 @@ Let's look at one in the shell to better understand how they work and how they c
 >>> # Here's the syntax, `{}` with `key:value`, with `key` being a string.
 >>> dog = {"name": "Lucky", "age": 12, "friends": ["Penny", "Pancho"]}
 >>> # like for lists, we use the brackets to reference data inside but instead of the index, we provide the key name as a string
->>> dog["name"]  
+>>> dog["name"]
 "Lucky"
 >>> dog["friends"].append("Spot")
 >>> len(dog["friends"])
