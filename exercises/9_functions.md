@@ -1,3 +1,5 @@
+# Functions
+
 1. Create function `multiply` that takes two variables and returns their product
 
 2. Create function `subtract` that takes two variables and returns their difference

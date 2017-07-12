@@ -1,18 +1,20 @@
-Create a dictionary called `class_data` with the following keys:
+# Dictionaries
 
-- "course_name", which should correspond to "Intro to Python"
+1. Create a dictionary called `class_data` with the following keys:
 
-- "student_count", which should correspond to number of students, say 20
+    - "course_name", which should correspond to "Python Programming 101"
 
-- "instructor", which should itself be a dictionary with the following keys
-    - "name" ("Henry")
-    - "gender" ("M")
-    - "can_program" (True)
+    - "student_count", which should correspond to number of students, say 15.
 
-- get the student count from the dictionary
+    - "instructor", which should itself be a dictionary with the following keys:
+        - "name" ("Henry")
+        - "gender" ("M")
+        - "can_program" (True)
 
-- get the instructor name from the dictionary
+2. Get the student count from the dictionary
 
-- delete the gender key under instructor
+3. Get the instructor name from the dictionary
 
-- change the instructor name to "Henry Xie"
+4. Delete the gender key under instructor
+
+5. Change the instructor name to "Henry Xie"

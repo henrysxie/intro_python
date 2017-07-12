@@ -1,8 +1,5 @@
-# Wharton Intro Python Workshop
-## October 22, 2016
+# Python Programming 101
 Build a solid foundation in Python, an excellent starting language known for its versatility and concise syntax.
-
-After taking Intermediate Python (November 11, 2016), you may delve deeper into particular areas such as web development, data science, and machine learning.
 
 # Instructor
 - name: Henry Xie
@@ -11,7 +8,7 @@ After taking Intermediate Python (November 11, 2016), you may delve deeper into 
 
 # What do you need?
 - Terminal for Mac users, Command Prompt for Windows users
-- Python 2.7+ (Run `python --version` in your Terminal or Command Prompt to see what you have installed)
+- Python 2.7 or higher (Run `python --version` in your Terminal or Command Prompt to see what you have installed)
 - Alternatively, you can run Python using an [online interpreter](https://repl.it/languages/python3)
 
 # The Basic Data Types
